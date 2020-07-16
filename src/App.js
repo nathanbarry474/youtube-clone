@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+import Grid from "@material-ui/core/Grid";
+
+import SearchBar from "./components/SearchBar";
+import VideoDetail from "./components/VideoDetail";
+import VideoList from "./components/VideoList";
+
+import youtube from "./api/youtube";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Grid container justify="center" spacing={16}>
+      <Grid item xs={12}>
+        <Grid container spacing={16}>
+          <Grid item xs={12}>
+            <SearchBar />
+          </Grid>
+          <Grid item xs={8}>
+            <VideoDetail />
+          </Grid>
+          <Grid item xs={4}></Grid>
+        </Grid>
+      </Grid>
+    </Grid>
   );
-}
+};
 
 export default App;
